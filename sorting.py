@@ -23,9 +23,23 @@ def read_data(file_name):
         return data
 
 
+def selection_sort(numbers_array):
+    for i in range(len(numbers_array)):
+        min_idx = i
+        for num_idx in range(i + 1, len(numbers_array)):
+            if numbers_array[min_idx] > numbers_array[num_idx]:
+                min_idx = num_idx
+        numbers_array[i], numbers_array[min_idx] = numbers_array[min_idx], numbers_array[i]
+    return numbers_array
+
+
+
+
 def main():
     data = read_data("numbers.csv")
-    print(data)
+    sorted_array = selection_sort(data["series_1"].copy())
+    print(data["series_1"])
+    print(sorted_array)
 
 
 if __name__ == '__main__':
