@@ -46,6 +46,17 @@ def bubble_sort(numbers_array):
     return numbers_array
 
 
+def insertion_sort(numbers_array):
+    for i in range(len(numbers_array)):
+        key = numbers_array[i]
+        j = i - 1
+        while j >= 0 and numbers_array[j] > key:
+            numbers_array[j + 1] = numbers_array[j]
+            j -= 1
+        numbers_array[j + 1] = key
+
+    return numbers_array
+
 
 def main():
     data = read_data("numbers.csv")
@@ -53,7 +64,9 @@ def main():
     print(data["series_1"])
     # print(sorted_array)
     sorted_array_bubble = bubble_sort(data["series_1"].copy())
-    print(sorted_array_bubble)
+    #print(sorted_array_bubble)
+    insertion_sort_array = insertion_sort(data["series_1"].copy())
+    print(insertion_sort_array)
 
 
 if __name__ == '__main__':
