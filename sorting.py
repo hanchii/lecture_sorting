@@ -39,9 +39,9 @@ def selection_sort(numbers_array, direction="ascending"):
 
 def bubble_sort(numbers_array):
     for i in range(len(numbers_array)):
-        for num in range(len(numbers_array) - 1):
-            if numbers_array[num] > numbers_array[num + 1]:
-                numbers_array[num], numbers_array[num + 1] = numbers_array[num + 1], numbers_array[num]
+        for num_idx in range(len(numbers_array) - 1 - i):
+            if numbers_array[num_idx] > numbers_array[num_idx + 1]:
+                numbers_array[num_idx], numbers_array[num_idx + 1] = numbers_array[num_idx + 1], numbers_array[num_idx]
 
     return numbers_array
 
